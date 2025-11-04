@@ -1,0 +1,6 @@
+.movie-list-container {
+  display: flex;
+  flex-wrap: wrap; /* Isso faz os cards quebrarem para a próxima linha */
+  justify-content: center; /* Centraliza a grade de cards na página */
+  padding: 2rem 1rem;
+}

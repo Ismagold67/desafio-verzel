@@ -1,0 +1,86 @@
+/* src/components/MovieCard/MovieCard.css */
+
+.movie-card {
+  width: 200px;
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 1rem;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  
+  /* Adiciona posicionamento relativo para o botão */
+  position: relative; 
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-info {
+  padding: 1rem;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #eee;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
+}
+
+.movie-rating {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #f5c518;
+}
+
+.movie-rating span {
+  margin-right: 0.25rem;
+  font-size: 1.2rem;
+}
+
+/* --- ESTILOS DO BOTÃO DE FAVORITO (CORRIGIDO) --- */
+
+.favorite-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  
+  /* Esta cor (white) será aplicada ao '♡' (vazado) */
+  color: white; 
+  /* O emoji '❤️' (cheio) vai ignorar esta cor */
+
+  font-size: 1.5rem; /* Aumentado para o '♡' aparecer bem */
+  line-height: 1; /* Alinha o emoji no centro */
+  
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.favorite-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* (Não precisamos mais da classe .favorited para a cor) */

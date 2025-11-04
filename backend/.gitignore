@@ -1,0 +1,16 @@
+# Ambiente Virtual
+venv/
+
+# Arquivos de IDE
+.vscode/
+__pycache__/
+
+# Arquivos de Banco de Dados Local
+*.sqlite3
+db.sqlite3
+
+# Arquivos de Segredos (MUITO IMPORTANTE)
+.env
+
+# Arquivos de Estáticos (o Render gera os dele)
+staticfiles/

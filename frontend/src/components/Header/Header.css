@@ -1,0 +1,27 @@
+/* src/components/Header/Header.css */
+.app-header {
+  background-color: #1a1a1a;
+  padding: 1rem 2rem; /* Diminuí um pouco o padding */
+  border-bottom: 1px solid #333;
+}
+
+/* Novo: container para alinhar o H1 e o Botão */
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* H1 na esquerda, Botão na direita */
+  align-items: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem; /* Diminuí um pouco */
+  color: #eee;
+  font-weight: 600;
+}
+
+/* Onde o botão de "favoritos" vai ficar */
+.header-actions {
+  display: flex;
+}

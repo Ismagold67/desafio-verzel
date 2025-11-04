@@ -1,0 +1,39 @@
+.searchbar-container {
+  /* Centraliza a barra de busca na tela */
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.searchbar-container form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+}
+
+.search-input {
+  flex-grow: 1; /* Faz o input ocupar o máximo de espaço possível */
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 8px 0 0 8px; /* Arredonda a borda esquerda */
+  background-color: #222;
+  color: white;
+  outline: none; /* Remove a borda azul ao clicar */
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0 8px 8px 0; /* Arredonda a borda direita */
+  background-color: #0d6efd; /* Um azul bonito */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #0b5ed7;
+}

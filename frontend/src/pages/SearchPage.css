@@ -1,0 +1,68 @@
+/* src/pages/SearchPage.css */
+
+/* O container principal da nossa página */
+.search-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* O <main> que segura a lista de filmes */
+.search-page-main {
+  flex-grow: 1;
+  width: 100%;
+}
+
+/* A "Área de Controle" que agora só tem a barra de busca */
+.search-controls {
+  max-width: 800px; /* Limita a largura da área de busca */
+  margin: 2rem auto; /* Centraliza na tela */
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaço (caso tivéssemos mais itens) */
+}
+
+/* O container que segura os 2 botões de ação (ainda usado na FavoritesPage) */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Espaço ENTRE os botões */
+  flex-wrap: wrap;
+}
+
+/* Estilo base dos botões de ação (usado pelo botão no Header e na FavoritesPage) */
+.action-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Cores específicas dos botões */
+.btn-primary {
+  background-color: #0d6efd;
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: #0b5ed7;
+}
+
+.btn-secondary {
+  background-color: #17a2b8;
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: #138496;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
