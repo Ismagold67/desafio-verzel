@@ -8,8 +8,10 @@ O projeto está estruturado como um **monorepo**, contendo o `backend` e o `fron
 
 ## 🚀 Links do Deploy
 
-* **Front-End (React):** `[LINK DO FRONT-END NA VERCEL - PREENCHER DEPOIS]`
-* **Back-End (Django):** `[LINK DO BACK-END NO RENDER - PREENCHER DEPOIS]`
+* **Front-End (React):** [https://desafio-verzel-rho.vercel.app](https://desafio-verzel-rho.vercel.app)
+* **Back-End (Django):** [https://api-filmes-verzel.onrender.com](https://api-filmes-verzel.onrender.com)
+
+*(Nota: O servidor do back-end (Render) utiliza um plano gratuito e "dorme" após 15 minutos de inatividade. A primeira requisição para a API pode demorar de 30 a 60 segundos para "acordar" o servidor.)*
 
 ---
 
@@ -18,7 +20,7 @@ O projeto está estruturado como um **monorepo**, contendo o `backend` e o `fron
 Este projeto foi construído utilizando as seguintes tecnologias:
 
 ### **Back-End (Pasta: `/backend`)**
-* **Python 3**
+* **Python 3.11**
 * **Django** (para a estrutura do servidor)
 * **Django Rest Framework (DRF)** (para a criação da API RESTful)
 * **PostgreSQL** (Banco de dados em produção)
