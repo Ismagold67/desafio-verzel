@@ -6,6 +6,7 @@ import SearchBar from '../components/SearchBar/SearchBar';
 import MovieList from '../components/MovieList/MovieList';
 import MovieModal from '../components/MovieModal/MovieModal';
 import './SearchPage.css';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 function SearchPage() {
   
@@ -41,7 +42,7 @@ function SearchPage() {
       setIsLoading(true); // Liga o loading da página
       
       // 1. Busca os IDs dos filmes
-      fetch(`http://localhost:8000/api/favorites/${listId}`)
+      fetch(`${API_BASE_URL}/favorites/${listId}`)
         .then(response => {
           if (!response.ok) throw new Error('Lista de favoritos salva não encontrada.');
           return response.json();
@@ -55,7 +56,7 @@ function SearchPage() {
           
           // 2. Busca os DETALHES de cada filme salvo
           const detailPromises = favoriteMoviesInfo.map(movieInfo =>
-            fetch(`http://localhost:8000/api/movie/${movieInfo.tmdb_movie_id}`)
+            fetch(`${API_BASE_URL}/movie/${movieInfo.tmdb_movie_id}`)
               .then(res => res.json())
           );
           return Promise.all(detailPromises);
@@ -87,7 +88,7 @@ function SearchPage() {
      */
     const createNewFavoriteList = () => {
       console.log("Nenhum ID salvo. Criando nova lista de favoritos...");
-      fetch('http://localhost:8000/api/favorites', {
+      fetch(`${API_BASE_URL}/favorites`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       })
@@ -133,7 +134,7 @@ function SearchPage() {
     setIsLoading(true);
     setError(null);
     setMovies([]);
-    fetch(`http://localhost:8000/api/search?q=${query}`)
+    fetch(`${API_BASE_URL}/search?q=${query}`)
       .then(response => {
         if (!response.ok) throw new Error('Falha ao buscar dados.');
         return response.json();
@@ -156,7 +157,7 @@ function SearchPage() {
     const movieId = movie.id;
     const isFavorite = favoriteMovies.has(movieId);
     const method = isFavorite ? 'DELETE' : 'POST';
-    fetch(`http://localhost:8000/api/favorites/${favoriteListId}/movie/${movieId}`, { method: method })
+    fetch(`${API_BASE_URL}/favorites/${favoriteListId}/movie/${movieId}`, { method: method })
       .then(response => {
         if (!response.ok && response.status !== 204) throw new Error(`Falha ao ${method} o favorito.`);
         setFavoriteMovies(prevMap => {
@@ -191,7 +192,7 @@ function SearchPage() {
     console.log("Selecionado filme com ID:", movieId);
     setIsModalLoading(true);
     setError(null);
-    fetch(`http://localhost:8000/api/movie/${movieId}`)
+    fetch(`${API_BASE_URL}/movie/${movieId}`)
       .then(response => {
         if (!response.ok) throw new Error('Falha ao buscar detalhes do filme.');
         return response.json();

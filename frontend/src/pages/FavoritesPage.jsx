@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import MovieList from '../components/MovieList/MovieList';
 import Header from '../components/Header/Header'; // 1. Importe o Header
 import './SearchPage.css'; // 2. Importe o CSS para usar os estilos dos botões
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 function FavoritesPage() {
   const { share_id } = useParams();
@@ -37,7 +38,7 @@ function FavoritesPage() {
       setIsLoading(true);
       setError(null);
       // ... (resto da lógica de fetch que já tínhamos) ...
-      fetch(`http://localhost:8000/api/favorites/${share_id}`)
+      fetch(`${API_BASE_UR}/favorites/${share_id}`)
         .then(response => {
           if (!response.ok) throw new Error('Lista de favoritos não encontrada.');
           return response.json();
@@ -50,7 +51,7 @@ function FavoritesPage() {
             return;
           }
           const detailPromises = favoriteMoviesInfo.map(movieInfo =>
-            fetch(`http://localhost:8000/api/movie/${movieInfo.tmdb_movie_id}`)
+            fetch(`${API_BASE_UR}/movie/${movieInfo.tmdb_movie_id}`)
               .then(res => res.json())
           );
           return Promise.all(detailPromises);
@@ -79,7 +80,7 @@ function FavoritesPage() {
   const handleMovieSelect = (movieId) => {
     setIsModalLoading(true);
     setError(null);
-    fetch(`http://localhost:8000/api/movie/${movieId}`)
+    fetch(`${API_BASE_UR}/movie/${movieId}`)
       .then(response => response.json())
       .then(data => {
         setSelectedMovie(data);
